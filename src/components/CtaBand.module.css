@@ -1,0 +1,24 @@
+.band {
+  background: var(--graphite);
+}
+
+.inner {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px 40px;
+  border: 1px solid var(--line);
+}
+
+.inner h2 {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 760px) {
+  .inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 28px 20px;
+  }
+}

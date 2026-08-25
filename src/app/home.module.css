@@ -1,0 +1,237 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  padding: calc(var(--header-h) + 24px) 0 48px;
+  overflow: hidden;
+}
+
+.heroMedia {
+  position: absolute;
+  inset: 0;
+}
+
+.heroMedia img {
+  object-fit: cover;
+  object-position: center 40%;
+  filter: grayscale(0.28) contrast(1.08) saturate(0.78);
+  animation: kenburns 18s var(--ease) both;
+}
+
+.heroMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 10, 11, 0.28) 0%, rgba(8, 10, 11, 0.82) 78%),
+    linear-gradient(90deg, rgba(8, 10, 11, 0.45), transparent 42%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 12px;
+}
+
+.heroKicker {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c5d3dc;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 8vw, 7rem);
+  max-width: 14ch;
+}
+
+.heroLead {
+  max-width: 38rem;
+  margin: 22px 0 28px;
+  color: #d4d9dc;
+  font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 220px));
+  gap: 24px;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.heroMeta {
+  position: absolute;
+  right: var(--gutter);
+  top: calc(var(--header-h) + 28px);
+  display: grid;
+  gap: 8px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--mist);
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.aboutStats {
+  border-color: var(--line-dark);
+}
+
+.aboutStats :global(.stat-item) {
+  border-color: var(--line-dark);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px 20px;
+  padding: 28px 20px;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.services > *:nth-child(odd) .service {
+  border-right: 1px solid var(--line);
+}
+
+.service span {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  color: var(--steel-2);
+  letter-spacing: 0.12em;
+}
+
+.service h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.service p {
+  grid-column: 2;
+  color: var(--mist);
+  max-width: 36ch;
+}
+
+.industries {
+  margin-top: 40px;
+}
+
+.solutions {
+  display: grid;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.solution {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.solutionCopy p {
+  margin: 14px 0 0;
+  color: var(--mist);
+  max-width: 46ch;
+}
+
+.solutionSpecs {
+  display: grid;
+  gap: 0;
+  border-left: 1px solid var(--line);
+  padding-left: 28px;
+}
+
+.solutionSpecs div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.solutionSpecs span {
+  color: var(--mist);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.more {
+  margin-top: 36px;
+}
+
+@media (max-width: 1024px) {
+  .aboutGrid,
+  .solution {
+    grid-template-columns: 1fr;
+  }
+
+  .solutionSpecs {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .heroMeta {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-h) + 36px);
+  }
+
+  .heroActions,
+  .heroStats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heroActions {
+    display: grid;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .service,
+  .services > *:nth-child(odd) .service {
+    grid-template-columns: 48px 1fr;
+    border-right: none;
+  }
+
+  .heroStats {
+    margin-top: 36px;
+  }
+}

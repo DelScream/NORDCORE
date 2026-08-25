@@ -1,0 +1,60 @@
+.card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  display: grid;
+  grid-template-rows: 220px 1fr;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+}
+
+.media img {
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.body h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.body dl {
+  display: grid;
+  gap: 8px;
+}
+
+.body dl div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.body dt {
+  color: var(--mist);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.body .btn {
+  margin-top: auto;
+}

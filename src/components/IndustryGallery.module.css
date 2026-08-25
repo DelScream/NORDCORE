@@ -1,0 +1,68 @@
+.row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  scroll-snap-align: start;
+  border: 1px solid var(--line);
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+}
+
+.media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.media img {
+  object-fit: cover;
+  filter: grayscale(0.25) contrast(1.05);
+  transition: transform 0.7s var(--ease), filter 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0) contrast(1.08);
+}
+
+.body {
+  padding: 20px 18px 24px;
+  display: grid;
+  gap: 8px;
+}
+
+.index {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--steel-2);
+  letter-spacing: 0.16em;
+}
+
+.body h3 {
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+.body p:last-child {
+  color: var(--mist);
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .row {
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
+    overflow: visible;
+  }
+}
