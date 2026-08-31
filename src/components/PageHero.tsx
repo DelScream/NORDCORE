@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "@/components/SiteImage";
 import { ReactNode } from "react";
 
 type Props = {
@@ -13,7 +13,7 @@ export function PageHero({ kicker, title, image, alt, children }: Props) {
   return (
     <header className="page-hero">
       <div className="page-hero__bg">
-        <Image src={image} alt={alt} fill sizes="100vw" priority />
+        <SiteImage src={image} alt={alt} fill sizes="100vw" priority />
       </div>
       <div className="container">
         {kicker ? <p className="kicker">{kicker}</p> : null}

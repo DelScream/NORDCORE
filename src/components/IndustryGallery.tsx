@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "@/components/SiteImage";
 import { industries } from "@/data/industries";
 import { Reveal } from "@/components/Reveal";
 import styles from "./IndustryGallery.module.css";
@@ -9,7 +9,7 @@ export function IndustryGallery() {
       {industries.map((item, index) => (
         <Reveal key={item.slug} className={styles.card} delay={((index % 4) + 1) as 1 | 2 | 3 | 4}>
           <div className={styles.media}>
-            <Image
+            <SiteImage
               src={item.image}
               alt={item.title}
               fill

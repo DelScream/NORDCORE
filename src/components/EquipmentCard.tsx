@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "@/components/SiteImage";
 import Link from "next/link";
 import type { EquipmentItem } from "@/data/equipment";
 import styles from "./EquipmentCard.module.css";
@@ -7,7 +7,7 @@ export function EquipmentCard({ item }: { item: EquipmentItem }) {
   return (
     <article className={styles.card}>
       <Link href={`/oborudovanie/${item.slug}`} className={styles.media}>
-        <Image
+        <SiteImage
           src={item.image}
           alt={item.title}
           fill

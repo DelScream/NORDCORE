@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "@/components/SiteImage";
 import { CertificateGrid } from "@/components/CertificateGrid";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
@@ -42,7 +42,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal className="media" delay={2}>
-            <Image
+            <SiteImage
               src="/images/precision.jpg"
               alt="Механообработка на производственной площадке"
               width={900}

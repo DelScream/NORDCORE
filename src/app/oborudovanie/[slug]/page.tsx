@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "@/components/SiteImage";
 import { notFound } from "next/navigation";
 import { AnchorLink } from "@/components/AnchorLink";
 import { CtaBand } from "@/components/CtaBand";
@@ -40,7 +40,7 @@ export default async function EquipmentItemPage({ params }: Props) {
       <section className="section">
         <div className={`container ${styles.detail}`}>
           <div className="media">
-            <Image src={item.image} alt={item.title} width={960} height={680} />
+            <SiteImage src={item.image} alt={item.title} width={960} height={680} />
           </div>
           <div>
             <p>{item.description}</p>

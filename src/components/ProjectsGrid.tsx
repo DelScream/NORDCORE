@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "@/components/SiteImage";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { projects } from "@/data/projects";
@@ -11,7 +11,7 @@ export function ProjectsGrid() {
         <Reveal key={item.slug} as="article">
           <Link href={`/proekty/${item.slug}`} className={styles.item}>
             <div className="media">
-              <Image src={item.image} alt={item.title} width={1200} height={760} />
+              <SiteImage src={item.image} alt={item.title} width={1200} height={760} />
             </div>
             <div className={styles.body}>
               <p className="mono">Проект №{item.number}</p>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "@/components/SiteImage";
 import { notFound } from "next/navigation";
 import { AnchorLink } from "@/components/AnchorLink";
 import { PageHero } from "@/components/PageHero";
@@ -65,7 +65,7 @@ export default async function ProjectPage({ params }: Props) {
           <div className={styles.gallery}>
             {item.gallery.map((src, index) => (
               <div className="media" key={src}>
-                <Image
+                <SiteImage
                   src={src}
                   alt={`${item.title} — кадр ${index + 1}`}
                   fill

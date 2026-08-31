@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "@/components/SiteImage";
 import { AnchorLink } from "@/components/AnchorLink";
 import { ContactsBlock } from "@/components/ContactsBlock";
 import { IndustryGallery } from "@/components/IndustryGallery";
@@ -15,7 +15,7 @@ export default function HomePage() {
     <>
       <section className={styles.hero}>
         <div className={styles.heroMedia}>
-          <Image
+          <SiteImage
             src="/images/hero.jpg"
             alt="Промышленное оборудование в производственном цехе"
             fill
@@ -76,7 +76,7 @@ export default function HomePage() {
             </p>
           </Reveal>
           <Reveal className="media" delay={2}>
-            <Image
+            <SiteImage
               src="/images/about.jpg"
               alt="Производственный участок НОРДКОР"
               width={960}

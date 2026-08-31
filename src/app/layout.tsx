@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { PortfolioPopup } from "@/components/PortfolioPopup";
 import { SITE_URL, site } from "@/data/site";
+import { withBasePath } from "@/lib/asset";
 import { defaultTitle } from "@/lib/seo";
 import "./globals.css";
 
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s — НОРДКОР",
   },
   description: site.description,
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: withBasePath("/favicon.svg") },
   openGraph: {
     title: defaultTitle,
     description: site.description,
